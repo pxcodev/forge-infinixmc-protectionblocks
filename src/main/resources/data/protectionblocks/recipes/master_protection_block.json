@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "NNN",
+    "NEN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "E": {
+      "item": "protectionblocks:elite_protection_block"
+    }
+  },
+  "result": {
+    "item": "protectionblocks:master_protection_block",
+    "count": 1
+  }
+}

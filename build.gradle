@@ -1,0 +1,135 @@
+buildscript {
+    repositories {
+        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
+        maven { url = 'https://maven.minecraftforge.net' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: true
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+
+version = '1.0.4'
+group = 'com.infinixmc.protectionblocks'
+archivesBaseName = 'protectionblocks'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+compileJava {
+    options.compilerArgs += ['-Xlint:deprecation']
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                protectionblocks {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                protectionblocks {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+    maven {
+        name = 'MinecraftForge'
+        url = 'https://maven.minecraftforge.net'
+    }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.8'
+}
+
+jar {
+    manifest {
+        attributes([
+            "Specification-Title": "Protection Blocks",
+            "Specification-Vendor": "InfinixMC",
+            "Specification-Version": "1",
+            "Implementation-Title": project.name,
+            "Implementation-Version": "${version}",
+            "Implementation-Vendor" :"InfinixMC",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+jar.finalizedBy('reobfJar')
+
+// Directorios de despliegue
+def deploymentDirs = [
+    'C:/Users/ASUS-DESKTOP/Desktop/server/mods',
+    'C:/Users/ASUS-DESKTOP/curseforge/minecraft/Instances/test mods/mods',
+    'C:/Users/ASUS-DESKTOP/AppData/Roaming/.minecraft/versions/Pruebas/mods'
+]
+
+// Tarea para limpiar versiones anteriores del mod
+task cleanOldMods {
+    doLast {
+        deploymentDirs.each { dir ->
+            def modsDir = file(dir)
+            if (modsDir.exists()) {
+                println "Limpiando versiones anteriores en: ${dir}"
+                modsDir.listFiles().each { file ->
+                    if (file.name.startsWith('protectionblocks-') && file.name.endsWith('.jar')) {
+                        println "  - Eliminando: ${file.name}"
+                        file.delete()
+                    }
+                }
+            } else {
+                println "Directorio no existe (saltando): ${dir}"
+            }
+        }
+    }
+}
+
+// Tarea para copiar el mod compilado a los directorios de despliegue
+task deployMod {
+    dependsOn cleanOldMods, jar
+    doLast {
+        def jarFile = jar.archiveFile.get().asFile
+        println "Archivo JAR: ${jarFile.name}"
+        
+        deploymentDirs.each { dir ->
+            def modsDir = file(dir)
+            if (modsDir.exists()) {
+                println "Copiando a: ${dir}"
+                copy {
+                    from jarFile
+                    into modsDir
+                }
+                println "  ✓ Copiado exitosamente"
+            } else {
+                println "Directorio no existe (saltando): ${dir}"
+            }
+        }
+        println "✓ Despliegue completado exitosamente!"
+    }
+}
+
+// Hacer que build ejecute el despliegue automáticamente
+build.finalizedBy(deployMod)

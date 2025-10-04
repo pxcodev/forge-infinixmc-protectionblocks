@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="protectionblocks"
+version="${file.jarVersion}"
+displayName="Protection Blocks"
+updateJSONURL=""
+displayURL=""
+logoFile=""
+credits="InfinixMC Team"
+authors="InfinixMC"
+description='''
+Mod que agrega bloques de protección para servidores de Minecraft. 
+Incluye 5 tipos de bloques con diferentes rangos de protección contra jugadores.
+'''
+
+[[dependencies.protectionblocks]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.8,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.protectionblocks]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"

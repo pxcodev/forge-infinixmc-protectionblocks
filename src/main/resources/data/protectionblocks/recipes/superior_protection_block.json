@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "DDD",
+    "DAD",
+    "DDD"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "A": {
+      "item": "protectionblocks:advanced_protection_block"
+    }
+  },
+  "result": {
+    "item": "protectionblocks:superior_protection_block",
+    "count": 1
+  }
+}

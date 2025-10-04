@@ -1,0 +1,41 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# Eclipse
+*.launch
+.settings/
+.metadata/
+.classpath
+.project
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Minecraft
+run/
+logs/
+
+# Forge
+.mixin.out/
+
+# Compiled files
+*.class
+*.jar
+!gradle-wrapper.jar
+
+# Misc
+*.log
+*.swp
+*.bak

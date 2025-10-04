@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "EEE",
+    "ESE",
+    "EEE"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "S": {
+      "item": "protectionblocks:superior_protection_block"
+    }
+  },
+  "result": {
+    "item": "protectionblocks:elite_protection_block",
+    "count": 1
+  }
+}

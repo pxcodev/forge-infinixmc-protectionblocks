@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "protectionblocks:block/master_protection_block"
+    }
+  }
+}
