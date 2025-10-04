@@ -1,92 +1,92 @@
 # Protection Blocks Mod
 
-Un mod de Minecraft Forge que permite a los jugadores proteger sus construcciones usando bloques de protección especiales.
+A Minecraft Forge mod that allows players to protect their builds using special protection blocks.
 
-## 📋 Características
+## 📋 Features
 
-- **5 Niveles de Protección**: Básico, Avanzado, Superior, Elite y Maestro
-- **Rangos de Protección Variables**: Desde 5 hasta 25 bloques de radio
-- **Sistema de Aliados**: Comparte tu protección con otros jugadores
-- **Permisos Granulares**: Controla qué pueden hacer tus aliados
-- **Visualización de Área**: Muestra visualmente el área protegida
-- **Sistema de Caché Eficiente**: Optimizado para servidores con múltiples protecciones
-- **Nombres de Zona**: Personaliza el nombre de tus áreas protegidas
-- **Mensajes de Bienvenida**: Configura mensajes para cuando los jugadores entren a tu zona
+- **5 Protection Tiers**: Basic, Advanced, Superior, Elite, and Master
+- **Variable Protection Ranges**: From 5 to 25 blocks radius
+- **Ally System**: Share your protection with other players
+- **Granular Permissions**: Control what your allies can do
+- **Area Visualization**: Visually display the protected area
+- **Efficient Cache System**: Optimized for servers with multiple protections
+- **Zone Names**: Customize the name of your protected areas
+- **Welcome Messages**: Configure messages for when players enter your zone
 
-## 🎮 Versión de Minecraft
+## 🎮 Minecraft Version
 
 - **Minecraft**: 1.20.1
 - **Forge**: 47.4.8
 - **Java**: 17
 
-## 📦 Instalación
+## 📦 Installation
 
-1. Descarga la última versión del mod desde [Releases](https://github.com/pxcodev/forge-infinixmc-protectionblocks/releases)
-2. Coloca el archivo `.jar` en la carpeta `mods` de tu instalación de Minecraft
-3. Inicia Minecraft con Forge 1.20.1
+1. Download the latest version of the mod from [Releases](https://github.com/pxcodev/forge-infinixmc-protectionblocks/releases)
+2. Place the `.jar` file in your Minecraft `mods` folder
+3. Launch Minecraft with Forge 1.20.1
 
-## 🔧 Compilación
+## 🔧 Building
 
 ```bash
 ./gradlew.bat build
 ```
 
-El archivo compilado se encontrará en `build/libs/`
+The compiled file will be located in `build/libs/`
 
-## 🛡️ Bloques de Protección
+## 🛡️ Protection Blocks
 
-| Bloque | Rango | Descripción |
-|--------|-------|-------------|
-| Básico | 5 bloques | Protección inicial para construcciones pequeñas |
-| Avanzado | 10 bloques | Para construcciones medianas |
-| Superior | 15 bloques | Para construcciones grandes |
-| Elite | 20 bloques | Para bases complejas |
-| Maestro | 25 bloques | Máxima protección disponible |
+| Block | Range | Description |
+|-------|-------|-------------|
+| Basic | 5 blocks | Initial protection for small builds |
+| Advanced | 10 blocks | For medium-sized builds |
+| Superior | 15 blocks | For large builds |
+| Elite | 20 blocks | For complex bases |
+| Master | 25 blocks | Maximum available protection |
 
-## 👥 Sistema de Aliados
+## 👥 Ally System
 
-Comparte tus protecciones con otros jugadores y controla sus permisos:
+Share your protections with other players and control their permissions:
 
-- **Construcción**: Permite colocar y romper bloques
-- **Interacción**: Permite usar puertas, cofres, botones, etc.
-- **Gestión**: Permite administrar la protección
+- **Build**: Allows placing and breaking blocks
+- **Interact**: Allows using doors, chests, buttons, etc.
+- **Manage**: Allows managing the protection
 
-## 🔨 Desarrollo
+## 🔨 Development
 
-### Estructura del Proyecto
+### Project Structure
 
 ```
 src/main/java/com/infinixmc/protectionblocks/
-├── blocks/          # Bloques de protección
-├── blockentity/     # Entidades de bloque
-├── client/          # Código del cliente
-├── config/          # Configuración del mod
-├── data/            # Persistencia de datos
-├── events/          # Manejadores de eventos
-├── gui/             # Interfaces gráficas
-├── init/            # Registro de bloques, items, etc.
-├── network/         # Paquetes de red
-└── util/            # Utilidades y helpers
+├── blocks/          # Protection blocks
+├── blockentity/     # Block entities
+├── client/          # Client-side code
+├── config/          # Mod configuration
+├── data/            # Data persistence
+├── events/          # Event handlers
+├── gui/             # Graphical interfaces
+├── init/            # Block, item, etc. registration
+├── network/         # Network packets
+└── util/            # Utilities and helpers
 ```
 
-## 📝 Licencia
+## 📝 License
 
-Este proyecto está bajo licencia MIT.
+This project is licensed under the MIT License.
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 **InfinixMC** - [pxcodev](https://github.com/pxcodev)
 
-## 🤝 Contribuciones
+## 🤝 Contributing
 
-Las contribuciones son bienvenidas. Por favor:
+Contributions are welcome. Please:
 
-1. Haz fork del proyecto
-2. Crea una rama para tu característica (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📮 Soporte
+## 📮 Support
 
-Si encuentras algún bug o tienes sugerencias, por favor abre un [issue](https://github.com/pxcodev/forge-infinixmc-protectionblocks/issues).
+If you find any bugs or have suggestions, please open an [issue](https://github.com/pxcodev/forge-infinixmc-protectionblocks/issues).
